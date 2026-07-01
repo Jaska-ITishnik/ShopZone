@@ -1,0 +1,35 @@
+body {
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* index.html stillari  uchun */
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+  padding: 60px 0 50px;
+}
+
+.hero-text h1{
+  max-width: 650px;
+  color: rgb(42, 12, 12);
+  font-size: 50px;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.hero h1 span{
+  color: brown;
+}
+
+
+
+
+
+
+/* about.html stillari  uchun */
