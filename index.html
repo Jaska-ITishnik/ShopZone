@@ -1,242 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bosh sahifa | ShopZone</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopZone elektron magazin frontend loyihasi">
+  <title>Bosh sahifa | ShopZone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="home-page">
-    <div>
-        <p> 300 mingdan yuqori buyurtmalar uchun tekin yetkazib berish xizmati</p>
+  <a class="skip-link" href="#main-content">Asosiy kontentga o‘tish</a>
+
+  <div class="announcement-bar">
+    <p>150$ dan yuqori buyurtmalar uchun bepul yetkazib berish</p>
+  </div>
+  <header id="main-header">
+    <a class="logo" href="index.html">Shop<span>Zone</span></a>
+    <nav class="navbar" id="mainNavbar" aria-label="Asosiy navigatsiya">
+      <a href="index.html">Bosh sahifa</a>
+      <a href="products.html">Mahsulotlar</a>
+      <a href="categories.html">Kategoriyalar</a>
+      <a href="about.html">Biz haqimizda</a>
+      <a href="contact.html">Aloqa</a>
+    </nav>
+    <div class="header-actions">
+      <a href="wishlist.html" class="header-icon" aria-label="Sevimlilar">♡<span class="wishlist-count">0</span></a>
+      <a href="cart.html" class="header-icon" aria-label="Savat">🛒<span class="cart-count">0</span></a>
+      <a href="login.html" class="login-btn">Kirish</a>
     </div>
-    <header class="main-header">
-        <a href="#" class="main-logo">Shop<span>Zone</span></a>
-        <nav class="navbar">
-            <a href="index.html">Bosh sahifa</a>
-            <a href="#">Maxsulotlar</a>
-            <a href="#">Kategoriyalar</a>
-            <a href="#">Biz haqimizda</a>
-            <a href="#">Aloqa</a>
-        </nav>
-        <div class="header-actions">
-            <a href="#" class="header-icon" aria-label="Sevimlilar">❤️
-                <span class="wishlist-count">0</span>
-            </a>
-            <a href="#login.html">Kirish</a>
-        </div>
-    </header>
+  </header>
 
-    <main>
-        <section class="hero-container">
-            <div class="hero-text">
-                <span class="eyebrow">
-                    Yangi kollektsiya 2026
-                    <h1>Sevimliy maxsulotlaringizni online xarid qiling</h1>
-                    <p>Zamonaviy dokon, hamyonbop narx, kafolotlangan sifat va 
-                        O'zbekiston bo'ylab tezkor yetkazib berish.</p>
-                    <div class="hero-buttons">
-                        <a href="#products.html" class="primary-btn">Xarid qilish</a>
-                        <a href="#categories.html" class="secondary-btn">Kategoriyalar</a>
-                        <div class="hero-stats">
-                            <div><strong>12K+</strong><span>Mijozlar</span></div>
-                            <div><strong>45K+</strong><span>Maxsulotlar</span></div>
-                            <div><strong>4.9</strong><span></span></div>
-                        </div>
-                    </div>
-                </span>
-            </div>
-            <div class="hero-image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVjdfNf40AwaxAmTg4VoYuDFyxDxo_qXLVg&s" alt="main-image">
-                <div class="floating-card floating-card-one"><strong>Tez yetkazib berish</strong>
-                    <span>24 - 48 soat ichida</span>
-                </div>
-            </div>
-        </section>
+<main id="main-content">
 
-        <section class="benefits container">
-            <article>
-                <span>🚚</span>
-                <div>
-                    <h3>Tez yetkazib berish</h3>
-                    <p>Butun O'zbekiston bo'ylab</p>
-                </div>
-            </article>
-            <article>
-                <span>🛡️</span>
-                <div>
-                    <h3>Xavsiz to'lov</h3>
-                    <p>Ma'lumotlaringiz himoyalangan</p>
-                </div>
-            </article>
-            <article>
-                <span>🔄</span>
-                <div>
-                    <h3>Oson qaytarish</h3>
-                    <p>30 kun ichida</p>
-                </div>
-            </article>
-            <article>
-                <span>📞</span>
-                <div>
-                    <h3>24/7 yordam</h3>
-                    <p>Har doim aloqadamiz</p>
-                </div>
-            </article>
-        </section>
+  <section class="hero container">
+    <div class="hero-text">
+      <span class="eyebrow">Yangi kolleksiya 2026</span>
+      <h1>Sevimli mahsulotlaringizni <span>onlayn xarid qiling</span></h1>
+      <p>Zamonaviy dizayn, hamyonbop narx, kafolatlangan sifat va O‘zbekiston bo‘ylab tezkor yetkazib berish.</p>
+      <div class="hero-buttons">
+        <a href="products.html" class="primary-btn">Xaridni boshlash</a>
+        <a href="categories.html" class="secondary-btn">Kategoriyalar</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>12K+</strong><span>Mijozlar</span></div>
+        <div><strong>850+</strong><span>Mahsulotlar</span></div>
+        <div><strong>4.9</strong><span>Reyting</span></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img loading="eager" fetchpriority="high" src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1200" alt="ShopZone onlayn xarid">
+      <div class="floating-card floating-card-one"><strong>Tez yetkazib berish</strong><span>24–48 soat ichida</span></div>
+      <div class="floating-card floating-card-two"><strong>30 kun kafolat</strong><span>Oson qaytarish</span></div>
+    </div>
+  </section>
 
-        <section class="section design-showcase container">
-            <div class="section-heading">
-                <div>
-                    <span class="eyebrow">Yaxshilangan xarid tajribasi</span>
-                    <h2>Nega ShopZone qulay?</h2>
-                </div>
-                <p class="section-intro">Har bir vebsaytning bo'limi juda qulay va sodda</p>
-            </div>
-
-            <div class="design-future-grid">
-                <article class="design-future-card">
-                    <span class="future-icon">⚡</span>
-                    <div>
-                        <small>Tezkor interfeys</small>
-                        <h3>Bir zumda toping</h3>
-                        <p>Qidiruv, filter va tartiblash yordamida maxsulotga tez yetib boring</p>
-                    </div>
-                    <a href="#products.html">Katalogni ochish <span aria-hidden="true">➡️</span></a>
-                </article>
-            </div>
-        </section>
-
-        <section class="section container">
-            <div class="section-heading">
-                <div>
-                    <span class="eyebrow">Tanlangan bo'limlar</span>
-                    <h2>Ommabop kategoriyalar</h2>
-                    <a href="#categories.html">Barchasini ko'rish ➡️</a>
-                </div>
-                <div class="category-grid">
-                    <a href="#" class="category-card large-category">
-                        <img src="https://media.bazaarvoice.com/Shutterstock_1875797686.png" alt="Elektronika">
-                        <div>
-                            <span>500+ maxsulot</span>
-                            <h3>Elektronika</h3>
-                        </div>
-                    </a>
-                    <a href="#" class="category-card">
-                        <img src="https://tomandlorenzo.com/wp-content/uploads/2026/02/BOSS-Fall-2026-Menswear-Collection-Runway-TLO-1.jpg" alt="Moda">
-                    </a>
-                    <div>
-                        <span>600+ mahsulot</span>
-                        <h3>Moda</h3>
-                    </div>
-                    <a href="#" class="category-card">
-                        <img src="https://hips.hearstapps.com/hmg-prod/images/mhl-opener-run-shoes-311-67edd9f20e75a.jpg?crop=0.655xw:0.983xh;0.168xw,0&resize=1120:*" alt="Moda">
-                    </a>
-                    <div>
-                        <span>300+ mahsulot</span>
-                        <h3>Oyoq kiyim</h3>
-                    </div>
-                    <a href="#" class="category-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLEkcduol9xiPxnnrKMlS5aoY_lcQ_M_TSwEepSw7bE2GSBwhyiGZF1RkJ&s=10" alt="Moda">
-                    </a>
-                    <div>
-                        <span>250+ mahsulot</span>
-                        <h3>Sport</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="sale-banner container">
-            <div>
-                <span class="eyebrow">
-                    Yozgi mega chegirma
-                </span>
-                <h2>Tanlangan maxsulotlarga 50% gacha chegirma</h2>
-                <p>Chegirma muddati tuguncha ulgurib qoling!</p>
-                <a href="#products.html" class="primary-btn">Aksiyani ko'rish</a>
-                <div>
-                    <img src="media/images/summer_discpunt.png" alt="">
-                </div>
-            </div>
-        </section>
-
-        <section class="section container">
-            <div class="section-heading centered">
-                <div>
-                    <span class="eyebrow">Mijozlar fikri</span>
-                    <h2>Biz haqimizda nima deyishdi?</h2>
-                </div>
-            </div>
-            <div class="comments">
-                <article>
-                    <div class="starts">
-                        <p>Buyurtma juda tez yetib keldi va maxsulot sifatli ekan</p>
-                        <div>
-                            <strong>Jasurbek B.</strong>
-                            <span>Toshkent</span>
-                        </div>             
-                    </div>
-                </article>
-                <article>
-                    <div class="starts">
-                        <p>Kech yetib keldi bir tinga qimmat ekan</p>
-                        <div>
-                            <strong>Botirjon B.</strong>
-                            <span>Jizzax</span>
-                        </div>             
-                    </div>
-                </article>
-                <article>
-                    <div class="starts">
-                        <p>Yaxshi menga maqul mahsulot</p>
-                        <div>
-                            <strong>Teshaboy T.</strong>
-                            <span>Qashqadaryo</span>
-                        </div>             
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
+  <section class="benefits container">
+    <article><span>🚚</span><div><h3>Tez yetkazib berish</h3><p>Butun O‘zbekiston bo‘ylab</p></div></article>
+    <article><span>🛡️</span><div><h3>Xavfsiz to‘lov</h3><p>Ma’lumotlaringiz himoyalangan</p></div></article>
+    <article><span>↩️</span><div><h3>Oson qaytarish</h3><p>30 kun ichida</p></div></article>
+    <article><span>🎧</span><div><h3>24/7 yordam</h3><p>Har doim aloqadamiz</p></div></article>
+  </section>
 
 
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <a class="logo footer-logo" href="index.html">
-                Shop<span>Zone</span>
-            </a>
-            <p>Sifatliy maxsulotlar tezkor yetkazib berish va hammasin bir joyda!</p>
-            <div class="social-links">
-                <a href="#" aria-label="Instagram">IG</a>
-                <a href="#" aria-label="Telegram">TG</a>
-                <a href="#" aria-label="Facebook">FB</a>
-            </div>
-        </div>
+  <section class="section design-showcase container" aria-labelledby="designShowcaseTitle">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Yaxshilangan xarid tajribasi</span>
+        <h2 id="designShowcaseTitle">Nega ShopZone qulay?</h2>
+      </div>
+      <p class="section-intro">Har bir blok zamonaviy CSS imkoniyatlari bilan tez, tushunarli va barcha ekranlarga mos yaratildi.</p>
+    </div>
+
+    <div class="design-feature-grid">
+      <article class="design-feature-card" data-accent="blue">
+        <span class="feature-icon" aria-hidden="true">⚡</span>
         <div>
-            <h3>Dokon</h3>
-            <a href="#">Maxsulotlar</a>
-            <a href="#">Kategoriyalar</a>
-            <a href="#">Sevimlilar</a>
-            <a href="#">Savat</a>
+          <small>Tezkor interfeys</small>
+          <h3>Bir zumda toping</h3>
+          <p>Qidiruv, filtr va tartiblash yordamida kerakli mahsulotga tez yetib boring.</p>
         </div>
-        <div
-            <h3>Yordam</h3>
-            <a href="#faq.html">Ko'p so'raladigan savollar</a>
-            <a href="#contact.html">Bog'lanish</a>
-            <a href="#orders.html">Buyurtmalar</a>
-            <a href="#about.html">Biz haqimizda</a>
+        <a href="products.html">Katalogni ochish <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="design-feature-card" data-accent="violet">
+        <span class="feature-icon" aria-hidden="true">◫</span>
+        <div>
+          <small>Moslashuvchan dizayn</small>
+          <h3>Har bir ekranda qulay</h3>
+          <p>Telefon, planshet va kompyuterda kontent tartibli va o‘qilishi oson qoladi.</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy 2026 ShopZone. Barcha huquqlar himoyalangan.</p>
-            <div>
-                <a href="#">Maxfiylik</a>
-                <a href="#">Foydalanish shartlari</a>
-            </div>
+        <a href="categories.html">Bo‘limlarni ko‘rish <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="design-feature-card" data-accent="orange">
+        <span class="feature-icon" aria-hidden="true">✦</span>
+        <div>
+          <small>Interaktiv elementlar</small>
+          <h3>Harakatga javob beradi</h3>
+          <p>Hover, focus, transition va animation effektlari foydalanuvchini yo‘naltiradi.</p>
         </div>
-    </footer>
+        <a href="about.html">Batafsil bilish <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div><span class="eyebrow">Tanlangan bo‘limlar</span><h2>Ommabop kategoriyalar</h2></div>
+      <a href="categories.html">Barchasini ko‘rish →</a>
+    </div>
+    <div class="category-grid">
+      <a href="products.html?category=Electronics" class="category-card large-category">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=900" alt="Elektronika">
+        <div><span>120+ mahsulot</span><h3>Elektronika</h3></div>
+      </a>
+      <a href="products.html?category=Fashion" class="category-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=900" alt="Moda">
+        <div><span>210+ mahsulot</span><h3>Moda</h3></div>
+      </a>
+      <a href="products.html?category=Shoes" class="category-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=900" alt="Oyoq kiyimlar">
+        <div><span>95+ mahsulot</span><h3>Oyoq kiyimlar</h3></div>
+      </a>
+      <a href="products.html?category=Accessories" class="category-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?w=900" alt="Aksessuarlar">
+        <div><span>180+ mahsulot</span><h3>Aksessuarlar</h3></div>
+      </a>
+      <a href="products.html?category=Home" class="category-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900" alt="Uy uchun">
+        <div><span>75+ mahsulot</span><h3>Uy uchun</h3></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div><span class="eyebrow">Eng yaxshi tanlov</span><h2>Tavsiya etilgan mahsulotlar</h2></div>
+      <a href="products.html">Barchasini ko‘rish →</a>
+    </div>
+    <div class="product-grid">
+
+      <article class="product-card" data-category="Electronics" data-name="smart watch pro" data-price="49.99">
+        <a class="product-image-link" href="product-detail.html?id=1">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900" alt="Smart Watch Pro">
+          <span class="discount-badge">-29%</span>
+        </a>
+        <div class="product-card-body">
+          <div class="product-meta">
+            <span>Electronics</span>
+            <span>★ 4.8</span>
+          </div>
+          <h3><a href="product-detail.html?id=1">Smart Watch Pro</a></h3>
+          <p>Sog‘liq monitoringi, bildirishnomalar va 7 kunlik batareyaga ega zamonaviy aqlli soat.</p>
+          <div class="product-price-row">
+            <div><strong>$49.99</strong><del>$69.99</del></div>
+            <button class="icon-btn wishlist-toggle" data-product-id="1" aria-label="Sevimlilarga qo‘shish">♡</button>
+          </div>
+          <button class="primary-btn full-width add-to-cart" data-product-id="1">Savatga qo‘shish</button>
+        </div>
+      </article>
+    
+
+      <article class="product-card" data-category="Shoes" data-name="sport shoes" data-price="79.99">
+        <a class="product-image-link" href="product-detail.html?id=2">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900" alt="Sport Shoes">
+          <span class="discount-badge">-20%</span>
+        </a>
+        <div class="product-card-body">
+          <div class="product-meta">
+            <span>Shoes</span>
+            <span>★ 4.7</span>
+          </div>
+          <h3><a href="product-detail.html?id=2">Sport Shoes</a></h3>
+          <p>Yengil, qulay va kundalik yugurish hamda faol hayot tarzi uchun mos sport oyoq kiyimi.</p>
+          <div class="product-price-row">
+            <div><strong>$79.99</strong><del>$99.99</del></div>
+            <button class="icon-btn wishlist-toggle" data-product-id="2" aria-label="Sevimlilarga qo‘shish">♡</button>
+          </div>
+          <button class="primary-btn full-width add-to-cart" data-product-id="2">Savatga qo‘shish</button>
+        </div>
+      </article>
+    
+
+      <article class="product-card" data-category="Electronics" data-name="wireless headphones" data-price="39.99">
+        <a class="product-image-link" href="product-detail.html?id=3">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=900" alt="Wireless Headphones">
+          <span class="discount-badge">-27%</span>
+        </a>
+        <div class="product-card-body">
+          <div class="product-meta">
+            <span>Electronics</span>
+            <span>★ 4.6</span>
+          </div>
+          <h3><a href="product-detail.html?id=3">Wireless Headphones</a></h3>
+          <p>Toza ovoz, kuchli bass, shovqinni kamaytirish va uzoq ishlash vaqtiga ega quloqchin.</p>
+          <div class="product-price-row">
+            <div><strong>$39.99</strong><del>$54.99</del></div>
+            <button class="icon-btn wishlist-toggle" data-product-id="3" aria-label="Sevimlilarga qo‘shish">♡</button>
+          </div>
+          <button class="primary-btn full-width add-to-cart" data-product-id="3">Savatga qo‘shish</button>
+        </div>
+      </article>
+    
+
+      <article class="product-card" data-category="Accessories" data-name="classic backpack" data-price="34.99">
+        <a class="product-image-link" href="product-detail.html?id=4">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900" alt="Classic Backpack">
+          <span class="discount-badge">-22%</span>
+        </a>
+        <div class="product-card-body">
+          <div class="product-meta">
+            <span>Accessories</span>
+            <span>★ 4.5</span>
+          </div>
+          <h3><a href="product-detail.html?id=4">Classic Backpack</a></h3>
+          <p>Noutbuk bo‘limi, mustahkam mato va kundalik foydalanish uchun qulay dizayn.</p>
+          <div class="product-price-row">
+            <div><strong>$34.99</strong><del>$44.99</del></div>
+            <button class="icon-btn wishlist-toggle" data-product-id="4" aria-label="Sevimlilarga qo‘shish">♡</button>
+          </div>
+          <button class="primary-btn full-width add-to-cart" data-product-id="4">Savatga qo‘shish</button>
+        </div>
+      </article>
+    
+
+      <article class="product-card" data-category="Shoes" data-name="minimal sneakers" data-price="64.99">
+        <a class="product-image-link" href="product-detail.html?id=5">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=900" alt="Minimal Sneakers">
+          <span class="discount-badge">-24%</span>
+        </a>
+        <div class="product-card-body">
+          <div class="product-meta">
+            <span>Shoes</span>
+            <span>★ 4.4</span>
+          </div>
+          <h3><a href="product-detail.html?id=5">Minimal Sneakers</a></h3>
+          <p>Minimalistik ko‘rinish va yumshoq taglik bilan shahar uslubidagi krossovka.</p>
+          <div class="product-price-row">
+            <div><strong>$64.99</strong><del>$84.99</del></div>
+            <button class="icon-btn wishlist-toggle" data-product-id="5" aria-label="Sevimlilarga qo‘shish">♡</button>
+          </div>
+          <button class="primary-btn full-width add-to-cart" data-product-id="5">Savatga qo‘shish</button>
+        </div>
+      </article>
+    
+
+      <article class="product-card" data-category="Accessories" data-name="premium sunglasses" data-price="29.99">
+        <a class="product-image-link" href="product-detail.html?id=6">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=900" alt="Premium Sunglasses">
+          <span class="discount-badge">-25%</span>
+        </a>
+        <div class="product-card-body">
+          <div class="product-meta">
+            <span>Accessories</span>
+            <span>★ 4.3</span>
+          </div>
+          <h3><a href="product-detail.html?id=6">Premium Sunglasses</a></h3>
+          <p>UV himoya, yengil ramka va kundalik kiyim bilan moslashuvchi zamonaviy ko‘zoynak.</p>
+          <div class="product-price-row">
+            <div><strong>$29.99</strong><del>$39.99</del></div>
+            <button class="icon-btn wishlist-toggle" data-product-id="6" aria-label="Sevimlilarga qo‘shish">♡</button>
+          </div>
+          <button class="primary-btn full-width add-to-cart" data-product-id="6">Savatga qo‘shish</button>
+        </div>
+      </article>
+    
+    </div>
+  </section>
+
+  <section class="sale-banner container">
+    <div>
+      <span class="eyebrow">Yozgi mega aksiya</span>
+      <h2>Tanlangan mahsulotlarga 50% gacha chegirma</h2>
+      <p>Chegirma muddati tugashidan oldin sevimli mahsulotingizni xarid qiling.</p>
+      <a href="products.html" class="primary-btn">Aksiyani ko‘rish</a>
+    </div>
+    <img loading="lazy" src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=900" alt="Yozgi chegirma">
+  </section>
+
+  <section class="section container">
+    <div class="section-heading centered">
+      <div><span class="eyebrow">Mijozlar fikri</span><h2>Biz haqimizda nima deyishadi?</h2></div>
+    </div>
+    <div class="testimonial-grid">
+      <article><div class="stars">★★★★★</div><p>“Buyurtmam juda tez yetib keldi. Mahsulot sifati rasmdagidan ham yaxshi ekan.”</p><div><strong>Madina A.</strong><span>Toshkent</span></div></article>
+      <article><div class="stars">★★★★★</div><p>“Savat va checkout jarayoni juda qulay. Narxlar ham boshqa do‘konlarga qaraganda yaxshi.”</p><div><strong>Jasurbek T.</strong><span>Samarqand</span></div></article>
+      <article><div class="stars">★★★★★</div><p>“Operatorlar tez javob berdi va o‘lcham tanlashda yordam berdi. Tavsiya qilaman.”</p><div><strong>Dilshod R.</strong><span>Farg‘ona</span></div></article>
+    </div>
+  </section>
+
+</main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <a class="logo footer-logo" href="index.html">Shop<span>Zone</span></a>
+        <p>Sifatli mahsulotlar, qulay narxlar va tezkor yetkazib berish bir joyda.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Telegram">TG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+      <div>
+        <h3>Do‘kon</h3>
+        <a href="products.html">Mahsulotlar</a>
+        <a href="categories.html">Kategoriyalar</a>
+        <a href="wishlist.html">Sevimlilar</a>
+        <a href="cart.html">Savat</a>
+      </div>
+      <div>
+        <h3>Yordam</h3>
+        <a href="faq.html">Ko‘p so‘raladigan savollar</a>
+        <a href="contact.html">Bog‘lanish</a>
+        <a href="orders.html">Buyurtmalar</a>
+        <a href="about.html">Biz haqimizda</a>
+      </div>
+      <div>
+        <h3>Yangiliklarga obuna</h3>
+        <p>Chegirmalar va yangi mahsulotlar haqida birinchi bo‘lib biling.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Email manzilingiz" required>
+          <button type="submit">Obuna</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ShopZone. Barcha huquqlar himoyalangan.</p>
+      <div><a href="#">Maxfiylik</a><a href="#">Foydalanish shartlari</a></div>
+    </div>
+  </footer>
+
 </body>
 </html>
