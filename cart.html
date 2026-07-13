@@ -45,7 +45,7 @@
 
       <div class="cart-layout">
         <div class="cart-items">
-          <article class="cart-item">
+          <article class="cart-item" data-unit-price="49.99">
             <a class="cart-item-image" href="product-detail.html?id=1">
               <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Smart Watch Pro">
             </a>
@@ -59,7 +59,7 @@
               </div>
               <div class="cart-item-meta">
                 <div class="cart-item-price">
-                  <strong>$49.99</strong>
+                  <strong class="item-total-price">$49.99</strong>
                   <span>1 dona</span>
                 </div>
                 <div class="quantity-control">
@@ -71,7 +71,7 @@
             </div>
           </article>
 
-          <article class="cart-item">
+          <article class="cart-item" data-unit-price="64.99">
             <a class="cart-item-image" href="product-detail.html?id=5">
               <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600" alt="Minimal Sneakers">
             </a>
@@ -85,7 +85,7 @@
               </div>
               <div class="cart-item-meta">
                 <div class="cart-item-price">
-                  <strong>$64.99</strong>
+                  <strong class="item-total-price">$64.99</strong>
                   <span>1 dona</span>
                 </div>
                 <div class="quantity-control">
@@ -100,9 +100,9 @@
 
         <aside class="cart-summary">
           <h2>Buyurtma haqida</h2>
-          <div class="summary-row"><span>Mahsulotlar narxi</span><strong>$114.98</strong></div>
+          <div class="summary-row"><span>Mahsulotlar narxi</span><strong class="summary-subtotal">$114.98</strong></div>
           <div class="summary-row"><span>Yetkazib berish</span><strong>Bepul</strong></div>
-          <div class="summary-row summary-total"><span>Jami</span><strong>$114.98</strong></div>
+          <div class="summary-row summary-total"><span>Jami</span><strong class="summary-total-value">$114.98</strong></div>
           <button class="primary-btn full-width" type="button">Rasmiylashtirish</button>
           <a href="products.html" class="secondary-btn full-width">Davom ettirish</a>
         </aside>
@@ -151,25 +151,49 @@
   </footer>
 
   <script>
+    function updateCartSummary() {
+      const items = document.querySelectorAll('.cart-item');
+      const subtotal = Array.from(items).reduce((sum, item) => {
+        const unitPrice = parseFloat(item.dataset.unitPrice || '0');
+        const qty = parseInt(item.querySelector('.qty-display').textContent, 10) || 0;
+        return sum + unitPrice * qty;
+      }, 0);
+
+      const subtotalEl = document.querySelector('.summary-subtotal');
+      const totalEl = document.querySelector('.summary-total-value');
+      const formatted = '$' + subtotal.toFixed(2);
+
+      if (subtotalEl) subtotalEl.textContent = formatted;
+      if (totalEl) totalEl.textContent = formatted;
+    }
+
     document.querySelectorAll('.qty-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         const control = this.closest('.quantity-control');
         const display = control.querySelector('.qty-display');
-        let qty = parseInt(display.textContent);
-        
+        let qty = parseInt(display.textContent, 10);
+
         if (this.classList.contains('qty-minus')) {
           if (qty > 1) qty--;
         } else if (this.classList.contains('qty-plus')) {
           qty++;
         }
-        
+
         display.textContent = qty;
-        
+
         const cartItem = this.closest('.cart-item');
         const priceSpan = cartItem.querySelector('.cart-item-price span');
+        const priceStrong = cartItem.querySelector('.item-total-price');
+        const unitPrice = parseFloat(cartItem.dataset.unitPrice || '0');
+
         priceSpan.textContent = qty + ' dona';
+        priceStrong.textContent = '$' + (unitPrice * qty).toFixed(2);
+
+        updateCartSummary();
       });
     });
+
+    updateCartSummary();
   </script>
 </body>
 </html>
