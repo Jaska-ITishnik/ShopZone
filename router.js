@@ -12,6 +12,8 @@
     'login.html',
     'register.html',
     'checkout.html',
+    'account.html',
+    'orders.html',
     '404.html'
   ];
 

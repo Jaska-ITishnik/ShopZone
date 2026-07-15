@@ -29,73 +29,146 @@
     <div class="header-actions">
       <a href="wishlist.html" class="header-icon" aria-label="Sevimlilar">♡<span class="wishlist-count">0</span></a>
       <a href="cart.html" class="header-icon" aria-label="Savat">🛒<span class="cart-count">0</span></a>
-      <a href="login.html" class="login-btn">Kirish</a>
+      <a href="account.html" class="header-icon user-icon" aria-label="Shaxsiy kabinet">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </a>
     </div>
   </header>
 
   <main id="main-content">
     <section class="section container">
-      <div class="section-heading">
+      <div class="section-heading dashboard-heading">
         <div>
           <span class="eyebrow">Mijoz kabineti</span>
           <h1>Shaxsiy ma'lumotlaringiz</h1>
         </div>
-        <p class="section-intro">Buyurtmalar, manzillar va profildagi ma'lumotlar shu yerda jamlangan.</p>
+        <p class="section-intro">Barcha ma'lumotlaringiz xavfsiz himoyalangan va bir joyda jamlangan.</p>
       </div>
 
-      <div class="account-layout">
-        <div class="account-card account-profile-card">
-          <div class="avatar-circle">JD</div>
-          <div>
-            <h2>Javohir Davronov</h2>
-            <p class="muted">Premium mijoz • 4.9 reyting</p>
-          </div>
-          <div class="account-stats">
-            <div>
-              <strong>12</strong>
-              <span>Buyurtma</span>
+      <div class="account-dashboard">
+        <!-- Sidebar / Profile Card -->
+        <aside class="dashboard-sidebar">
+          <div class="dashboard-card profile-main-card">
+            <div class="profile-header-bg"></div>
+            <div class="avatar-wrapper">
+              <div class="avatar-circle premium-glow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </div>
+              <span class="status-badge online"></span>
             </div>
-            <div>
-              <strong>2</strong>
-              <span>Faol taklif</span>
+            <div class="profile-info">
+              <h2>Javohir Davronov</h2>
+              <span class="premium-tag">💎 Premium A'zo</span>
             </div>
-            <div>
-              <strong>98%</strong>
-              <span>Qoniqish</span>
+            
+            <div class="profile-stats">
+              <div class="stat-box">
+                <span class="stat-value">12</span>
+                <span class="stat-label">Buyurtma</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-value">3</span>
+                <span class="stat-label">Kupon</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-value">2.4k</span>
+                <span class="stat-label">Ballar</span>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="account-card">
-          <h3>Asosiy ma'lumotlar</h3>
-          <ul class="account-details">
-            <li><span>Ism</span><strong>Javohir Davronov</strong></li>
-            <li><span>Email</span><strong>j.davronov@example.com</strong></li>
-            <li><span>Telefon</span><strong>+998 90 123 45 67</strong></li>
-            <li><span>Manzil</span><strong>Toshkent, Yunusobod</strong></li>
-            <li><span>To'lov turi</span><strong>Payme / Click</strong></li>
-            <li><span>Ro‘yxatdan o‘tgan</span><strong>2024-yil yanvar</strong></li>
-          </ul>
-        </div>
-
-        <div class="account-card">
-          <h3>Eng oxirgi buyurtma</h3>
-          <div class="order-summary">
-            <div>
-              <p class="eyebrow">#1024</p>
-              <h4>Smart Watch Pro</h4>
-            </div>
-            <div class="order-badge">Yetkazildi</div>
+            <nav class="dashboard-nav">
+              <a href="#" class="active"><span class="nav-icon">👤</span> Profil</a>
+              <a href="orders.html"><span class="nav-icon">📦</span> Buyurtmalar</a>
+              <a href="wishlist.html"><span class="nav-icon">❤️</span> Sevimlilar</a>
+              <a href="contact.html"><span class="nav-icon">🎧</span> Yordam</a>
+              <a href="login.html" class="logout-link"><span class="nav-icon">🚪</span> Chiqish</a>
+            </nav>
           </div>
-          <p class="muted">Buyurtma sanasi: 15-iyul 2026 • 2 ta mahsulot • Jami: $129.98</p>
-        </div>
+        </aside>
 
-        <div class="account-card">
-          <h3>Harakatlar</h3>
-          <div class="account-actions">
-            <a href="orders.html" class="primary-btn">Buyurtmalarim</a>
-            <a href="wishlist.html" class="secondary-btn">Sevimlilar</a>
-            <a href="contact.html" class="secondary-btn">Yordam</a>
+        <!-- Main Content Area -->
+        <div class="dashboard-content">
+          <!-- Profile Completion -->
+          <div class="dashboard-card completion-card">
+            <div class="completion-header">
+              <h3>Profil to'liqligi</h3>
+              <span>85%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 85%;"></div>
+            </div>
+            <p class="muted">Tug'ilgan kuningizni kiriting va 100 bonus ballga ega bo'ling.</p>
+          </div>
+
+          <div class="dashboard-grid">
+            <!-- Details Card -->
+            <div class="dashboard-card details-card">
+              <div class="card-header-flex">
+                <h3>Asosiy ma'lumotlar</h3>
+                <button class="icon-btn edit-btn" aria-label="Tahrirlash">✏️</button>
+              </div>
+              <ul class="detail-list">
+                <li>
+                  <span class="detail-icon">📧</span>
+                  <div class="detail-text">
+                    <span class="label">Email manzil</span>
+                    <strong>j.davronov@example.com</strong>
+                  </div>
+                </li>
+                <li>
+                  <span class="detail-icon">📱</span>
+                  <div class="detail-text">
+                    <span class="label">Telefon raqam</span>
+                    <strong>+998 90 123 45 67</strong>
+                  </div>
+                </li>
+                <li>
+                  <span class="detail-icon">📍</span>
+                  <div class="detail-text">
+                    <span class="label">Yetkazib berish manzili</span>
+                    <strong>Toshkent sh., Yunusobod tumani, 19-mavze, 42-uy</strong>
+                  </div>
+                </li>
+                <li>
+                  <span class="detail-icon">💳</span>
+                  <div class="detail-text">
+                    <span class="label">Asosiy to'lov usuli</span>
+                    <strong>Uzcard tugallanishi: **** 8899</strong>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="dashboard-card activity-card">
+              <h3>So'nggi harakatlar</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot success"></div>
+                  <div class="timeline-content">
+                    <h4>Buyurtma yetkazildi</h4>
+                    <p>Buyurtma #1024 muvaffaqiyatli yetkazildi.</p>
+                    <span class="time">Kecha, 14:30</span>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot primary"></div>
+                  <div class="timeline-content">
+                    <h4>To'lov qabul qilindi</h4>
+                    <p>Buyurtma #1024 uchun $129.98 to'landi.</p>
+                    <span class="time">13-iyul, 10:15</span>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot warning"></div>
+                  <div class="timeline-content">
+                    <h4>Savatchada yangi mahsulot</h4>
+                    <p>Smart Watch Pro savatchaga qo'shildi.</p>
+                    <span class="time">13-iyul, 09:45</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

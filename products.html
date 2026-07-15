@@ -29,7 +29,9 @@
     <div class="header-actions">
       <a href="wishlist.html" class="header-icon" aria-label="Sevimlilar">♡<span class="wishlist-count">0</span></a>
       <a href="cart.html" class="header-icon" aria-label="Savat">🛒<span class="cart-count">0</span></a>
-      <a href="login.html" class="login-btn">Kirish</a>
+      <a href="account.html" class="header-icon user-icon" aria-label="Shaxsiy kabinet">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </a>
     </div>
   </header>
 
@@ -51,7 +53,19 @@
       </div>
 
       <div class="search-panel">
-        <input id="product-search" type="search" placeholder="Mahsulot qidiring (masalan: watch, shoes, backpack)" aria-label="Mahsulot qidirish">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input id="product-search" type="search" placeholder="Mahsulot qidiring (masalan: watch, shoes, backpack)" aria-label="Mahsulot qidirish">
+          <button id="clear-search" class="clear-search-btn" aria-label="Tozalash" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div class="search-filters">
+          <button class="filter-btn active" data-filter="all">Barchasi</button>
+          <button class="filter-btn" data-filter="electronics">Elektronika</button>
+          <button class="filter-btn" data-filter="shoes">Oyoq kiyimlar</button>
+          <button class="filter-btn" data-filter="accessories">Aksessuarlar</button>
+        </div>
         <p id="search-status" class="search-status">Barcha mahsulotlar ko‘rinmoqda</p>
       </div>
 
@@ -222,26 +236,62 @@
   <script>
     const searchInput = document.getElementById('product-search');
     const searchStatus = document.getElementById('search-status');
+    const clearBtn = document.getElementById('clear-search');
+    const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = Array.from(document.querySelectorAll('.product-card'));
+    let currentFilter = 'all';
 
     function filterProducts() {
       const query = (searchInput.value || '').trim().toLowerCase();
       let visibleCount = 0;
+      
+      clearBtn.style.display = query.length > 0 ? 'flex' : 'none';
 
       cards.forEach(card => {
         const text = `${card.dataset.name || ''} ${card.dataset.category || ''}`.toLowerCase();
-        const match = text.includes(query);
-        card.style.display = match ? '' : 'none';
-        if (match) visibleCount++;
+        const categoryMatch = currentFilter === 'all' || card.dataset.category === currentFilter;
+        const searchMatch = text.includes(query);
+        const match = categoryMatch && searchMatch;
+        
+        if (match) {
+          card.style.display = '';
+          // Add a tiny animation when showing
+          card.style.animation = 'none';
+          card.offsetHeight; /* trigger reflow */
+          card.style.animation = 'fadeInUp 0.4s ease forwards';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
       });
 
-      searchStatus.textContent = query
-        ? `${visibleCount} ta mahsulot topildi`
-        : 'Barcha mahsulotlar ko‘rinmoqda';
+      if (visibleCount === 0) {
+        searchStatus.innerHTML = `<span style="color:var(--danger)">Kechirasiz, <strong>"${query}"</strong> bo'yicha mahsulot topilmadi.</span>`;
+      } else {
+        searchStatus.textContent = query || currentFilter !== 'all'
+          ? `${visibleCount} ta mahsulot topildi`
+          : 'Barcha mahsulotlar ko‘rinmoqda';
+      }
     }
 
     if (searchInput) {
       searchInput.addEventListener('input', filterProducts);
+      
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.focus();
+        filterProducts();
+      });
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          filterProducts();
+        });
+      });
+      
       filterProducts();
     }
   </script>
