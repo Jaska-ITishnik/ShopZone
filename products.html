@@ -50,8 +50,13 @@
         <a href="products.html" class="secondary-btn">Aksessuarlar</a>
       </div>
 
-      <div class="product-grid">
-        <article class="product-card">
+      <div class="search-panel">
+        <input id="product-search" type="search" placeholder="Mahsulot qidiring (masalan: watch, shoes, backpack)" aria-label="Mahsulot qidirish">
+        <p id="search-status" class="search-status">Barcha mahsulotlar ko‘rinmoqda</p>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+        <article class="product-card" data-name="smart watch pro" data-category="electronics">
           <a class="product-image-link" href="product-detail.html?id=1">
             <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900" alt="Smart Watch Pro">
             <span class="discount-badge">-29%</span>
@@ -71,7 +76,7 @@
           </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-name="sport shoes" data-category="shoes">
           <a class="product-image-link" href="product-detail.html?id=2">
             <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900" alt="Sport Shoes">
             <span class="discount-badge">-20%</span>
@@ -91,7 +96,7 @@
           </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-name="wireless headphones" data-category="electronics">
           <a class="product-image-link" href="product-detail.html?id=3">
             <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=900" alt="Wireless Headphones">
             <span class="discount-badge">-27%</span>
@@ -111,7 +116,7 @@
           </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-name="classic backpack" data-category="accessories">
           <a class="product-image-link" href="product-detail.html?id=4">
             <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900" alt="Classic Backpack">
             <span class="discount-badge">-22%</span>
@@ -131,7 +136,7 @@
           </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-name="minimal sneakers" data-category="shoes">
           <a class="product-image-link" href="product-detail.html?id=5">
             <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=900" alt="Minimal Sneakers">
             <span class="discount-badge">-24%</span>
@@ -151,7 +156,7 @@
           </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-name="premium sunglasses" data-category="accessories">
           <a class="product-image-link" href="product-detail.html?id=6">
             <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=900" alt="Premium Sunglasses">
             <span class="discount-badge">-25%</span>
@@ -213,5 +218,32 @@
       <div><a href="#">Maxfiylik</a><a href="#">Foydalanish shartlari</a></div>
     </div>
   </footer>
+  <script src="router.js"></script>
+  <script>
+    const searchInput = document.getElementById('product-search');
+    const searchStatus = document.getElementById('search-status');
+    const cards = Array.from(document.querySelectorAll('.product-card'));
+
+    function filterProducts() {
+      const query = (searchInput.value || '').trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const text = `${card.dataset.name || ''} ${card.dataset.category || ''}`.toLowerCase();
+        const match = text.includes(query);
+        card.style.display = match ? '' : 'none';
+        if (match) visibleCount++;
+      });
+
+      searchStatus.textContent = query
+        ? `${visibleCount} ta mahsulot topildi`
+        : 'Barcha mahsulotlar ko‘rinmoqda';
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', filterProducts);
+      filterProducts();
+    }
+  </script>
 </body>
 </html>
